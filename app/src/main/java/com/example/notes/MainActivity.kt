@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             if(note.isNotEmpty()) {
                 viewModel.insert(Note(note,notes))
                 input.setText("")
+                minput.setText("")
             }
 //            if (notes.isNotEmpty()){
 //                viewModel.insert(Note(notes))
