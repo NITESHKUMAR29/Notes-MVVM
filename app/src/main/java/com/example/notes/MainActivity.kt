@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             val note =input.text.toString()
             val notes=minput.text.toString()
             if(note.isNotEmpty()) {
-                viewModel.insert(Note(note,notes))
+                viewModel.insert(Note(note,notes,0))
                 input.setText("")
                 minput.setText("")
             }
