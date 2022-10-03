@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notes.Adapter.NotesAdapters
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -34,12 +35,13 @@ class MainActivity : AppCompatActivity() {
                 adapters.updateList(it)
             }
         })
+
         submit.setOnClickListener {
 
             val note =input.text.toString()
             val notes=minput.text.toString()
             if(note.isNotEmpty()) {
-                viewModel.insert(Note(note,notes))
+                viewModel.insert(Note(note,notes,0))
                 input.setText("")
                 minput.setText("")
             }
@@ -47,9 +49,13 @@ class MainActivity : AppCompatActivity() {
 //                viewModel.insert(Note(notes))
 //                minput.setText("")
 //            }
-
-
         }
+
+        delete_all.setOnClickListener {
+            viewModel.deleteAll()
+            Snackbar.make(it, "All notes deleted!", Snackbar.LENGTH_SHORT).show()
+        }
+
     }
 
 }
