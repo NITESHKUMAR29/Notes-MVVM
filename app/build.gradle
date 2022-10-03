@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 32
     buildToolsVersion "30.0.3"
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId "com.example.notes"
         minSdkVersion 16
-        targetSdkVersion 30
+        targetSdkVersion 32
         versionCode 1
         versionName "1.0"
 
@@ -41,8 +41,6 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
 
-    // Dependencies for working with Architecture components
-    // You'll probably have to update the version numbers in build.gradle (Project)
 
     // Room components
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
