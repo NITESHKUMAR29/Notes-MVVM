@@ -26,7 +26,8 @@
         android:padding="16dp"
         android:src="@drawable/ic_baseline_delete_forever_24"
         app:layout_constraintEnd_toEndOf="@+id/mitem"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
 
     <TextView
         android:id="@+id/m2item"
