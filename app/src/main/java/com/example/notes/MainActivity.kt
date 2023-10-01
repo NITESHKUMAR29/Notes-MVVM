@@ -20,6 +20,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        buildRecyclerView()
+
+
+        submit.setOnClickListener {
+
+            val note =input.text.toString()
+            val notes=minput.text.toString()
+            if(note.isNotEmpty()) {
+                viewModel.insert(Note(note,notes,0))
+                input.setText("")
+                minput.setText("")
+            }
+        }
+
+        delete_all.setOnClickListener {
+            viewModel.deleteAll()
+            Snackbar.make(it, "All notes deleted!", Snackbar.LENGTH_SHORT).show()
+        }
+
+    }
+    fun buildRecyclerView(){
         list = ArrayList()
 
         adapters = NotesAdapters(list,this,application)
@@ -35,27 +56,6 @@ class MainActivity : AppCompatActivity() {
                 adapters.updateList(it)
             }
         }
-
-        submit.setOnClickListener {
-
-            val note =input.text.toString()
-            val notes=minput.text.toString()
-            if(note.isNotEmpty()) {
-                viewModel.insert(Note(note,notes,0))
-                input.setText("")
-                minput.setText("")
-            }
-//            if (notes.isNotEmpty()){
-//                viewModel.insert(Note(notes))
-//                minput.setText("")
-//            }
-        }
-
-        delete_all.setOnClickListener {
-            viewModel.deleteAll()
-            Snackbar.make(it, "All notes deleted!", Snackbar.LENGTH_SHORT).show()
-        }
-
     }
 
 }
