@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity() {
         viewModel=ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(Application())
         ).get(NoteViewModel(application)::class.java)
-        viewModel.allNotes.observe(this, Observer {list->
+        viewModel.allNotes.observe(this) { list ->
             list?.let {
                 adapters.updateList(it)
             }
-        })
+        }
 
         submit.setOnClickListener {
 
