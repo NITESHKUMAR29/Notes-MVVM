@@ -6,8 +6,8 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_note_editview.*
 
-class noteEditview : AppCompatActivity() {
-    lateinit var viewModel: NoteViewModel
+class noteEditView : AppCompatActivity() {
+    private lateinit var viewModel: NoteViewModel
     private var noteId =0 // initial value
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
