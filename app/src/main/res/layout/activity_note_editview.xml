@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4C4B4B"
-    tools:context=".noteEditView">
+    tools:context=".NoteEditView">
 
     <EditText
         android:id="@+id/edTxt_note_edit"

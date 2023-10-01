@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.notes.Note
 import com.example.notes.NoteViewModel
 import com.example.notes.R
-import com.example.notes.noteEditView
+import com.example.notes.NoteEditView
 
 class NotesAdapters (private  val list: ArrayList<Note>,val  context: Context, val application: Application) : RecyclerView.Adapter<NotesAdapters.HomeActivity>() {
     lateinit var noteViewModel: NoteViewModel
@@ -42,7 +42,7 @@ class NotesAdapters (private  val list: ArrayList<Note>,val  context: Context, v
             NoteViewModel(application).delete(currentItem)
         }
         holder.card.setOnClickListener {
-            val intent = Intent(context, noteEditView::class.java)
+            val intent = Intent(context, NoteEditView::class.java)
             intent.putExtra("note id",list[position].id)
             intent.putExtra("note text",list[position].subtext)
             intent.putExtra("note title",list[position].text)
