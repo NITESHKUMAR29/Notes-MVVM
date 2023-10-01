@@ -20,21 +20,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        list = ArrayList()
+        buildRecyclerView()
 
-        adapters = NotesAdapters(list,this,application)
-        recyclerView.adapter = adapters
-        recyclerView.hasFixedSize()
-
-        recyclerView.layoutManager=LinearLayoutManager(this)
-        viewModel=ViewModelProvider(this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(Application())
-        ).get(NoteViewModel(application)::class.java)
-        viewModel.allNotes.observe(this) { list ->
-            list?.let {
-                adapters.updateList(it)
-            }
-        }
 
         submit.setOnClickListener {
 
@@ -52,6 +39,23 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(it, "All notes deleted!", Snackbar.LENGTH_SHORT).show()
         }
 
+    }
+    fun buildRecyclerView(){
+        list = ArrayList()
+
+        adapters = NotesAdapters(list,this,application)
+        recyclerView.adapter = adapters
+        recyclerView.hasFixedSize()
+
+        recyclerView.layoutManager=LinearLayoutManager(this)
+        viewModel=ViewModelProvider(this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(Application())
+        ).get(NoteViewModel(application)::class.java)
+        viewModel.allNotes.observe(this) { list ->
+            list?.let {
+                adapters.updateList(it)
+            }
+        }
     }
 
 }
