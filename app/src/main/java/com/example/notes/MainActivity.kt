@@ -45,10 +45,6 @@ class MainActivity : AppCompatActivity() {
                 input.setText("")
                 minput.setText("")
             }
-//            if (notes.isNotEmpty()){
-//                viewModel.insert(Note(notes))
-//                minput.setText("")
-//            }
         }
 
         delete_all.setOnClickListener {
