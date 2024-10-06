@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Notes</string>
     <string name="add_a_title">Add a Title</string>
+    <string name="title">Title</string>
 </resources>
