@@ -39,7 +39,7 @@
         android:background="@drawable/typingsection"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Add a Title"
+        android:hint="@string/add_a_title"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
         android:text="Title"
